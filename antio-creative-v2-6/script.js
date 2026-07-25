@@ -25,3 +25,19 @@ document.getElementById('year').textContent=new Date().getFullYear();
 const updateHeader=()=>header?.classList.toggle('scrolled',window.scrollY>40);
 updateHeader();
 window.addEventListener('scroll',updateHeader,{passive:true});
+
+// Gallery lightbox used on portfolio detail pages.
+const lightbox=document.querySelector('.lightbox');
+const lightboxImage=lightbox?.querySelector('img');
+document.querySelectorAll('button.gallery-item').forEach(button=>button.addEventListener('click',()=>{
+  if(!lightbox||!lightboxImage) return;
+  const image=button.querySelector('img');
+  lightboxImage.src=image.src;
+  lightboxImage.alt=image.alt;
+  lightbox.classList.add('open');
+  document.body.style.overflow='hidden';
+}));
+const closeLightbox=()=>{if(!lightbox)return;lightbox.classList.remove('open');document.body.style.overflow='';};
+lightbox?.querySelector('.lightbox-close')?.addEventListener('click',closeLightbox);
+lightbox?.addEventListener('click',event=>{if(event.target===lightbox)closeLightbox();});
+document.addEventListener('keydown',event=>{if(event.key==='Escape')closeLightbox();});
