@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#eef7ff"/><stop offset=".5" stop-color="#fff5d9"/><stop offset="1" stop-color="#f5e7ff"/></linearGradient>
+    <linearGradient id="hero" x1="0" x2="1"><stop stop-color="#241f46"/><stop offset="1" stop-color="#5f3ca8"/></linearGradient>
+    <filter id="s"><feDropShadow dx="0" dy="32" stdDeviation="38" flood-color="#352b50" flood-opacity=".23"/></filter>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#bg)"/>
+  <circle cx="1400" cy="120" r="260" fill="#ff8aaa" opacity=".22"/>
+  <circle cx="170" cy="900" r="310" fill="#77d9ff" opacity=".22"/>
+  <g filter="url(#s)">
+    <rect x="120" y="120" width="1180" height="700" rx="38" fill="#17142b"/>
+    <rect x="148" y="154" width="1124" height="632" rx="22" fill="#fff"/>
+    <rect x="148" y="154" width="1124" height="72" rx="22" fill="#f3f0f8"/>
+    <circle cx="192" cy="190" r="12" fill="#ff7b82"/><circle cx="230" cy="190" r="12" fill="#ffd166"/><circle cx="268" cy="190" r="12" fill="#61d8ff"/>
+    <rect x="320" y="179" width="460" height="22" rx="11" fill="#d9d3e4"/>
+    <rect x="148" y="226" width="1124" height="330" fill="url(#hero)"/>
+    <rect x="215" y="290" width="420" height="34" rx="17" fill="#fff"/>
+    <rect x="215" y="346" width="350" height="18" rx="9" fill="#bcb3d0"/>
+    <rect x="215" y="382" width="390" height="18" rx="9" fill="#bcb3d0"/>
+    <rect x="215" y="445" width="150" height="48" rx="24" fill="#ffd166"/>
+    <rect x="770" y="275" width="405" height="225" rx="28" fill="#fff" opacity=".15"/>
+    <rect x="205" y="606" width="285" height="115" rx="24" fill="#fff1cf"/>
+    <rect x="518" y="606" width="285" height="115" rx="24" fill="#eee8ff"/>
+    <rect x="831" y="606" width="285" height="115" rx="24" fill="#e3f6ff"/>
+  </g>
+  <g filter="url(#s)">
+    <rect x="1170" y="320" width="300" height="570" rx="52" fill="#17142b"/>
+    <rect x="1192" y="350" width="256" height="510" rx="34" fill="#fff"/>
+    <rect x="1220" y="395" width="200" height="120" rx="22" fill="url(#hero)"/>
+    <rect x="1220" y="550" width="160" height="18" rx="9" fill="#2a2150"/>
+    <rect x="1220" y="588" width="200" height="13" rx="7" fill="#b9b1ca"/>
+    <rect x="1220" y="620" width="180" height="13" rx="7" fill="#d0c9da"/>
+    <rect x="1220" y="680" width="200" height="72" rx="20" fill="#fff0c5"/>
+    <circle cx="1320" cy="820" r="12" fill="#fff" opacity=".65"/>
+  </g>
+</svg>
