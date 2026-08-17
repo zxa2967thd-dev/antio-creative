@@ -41,3 +41,41 @@ const closeLightbox=()=>{if(!lightbox)return;lightbox.classList.remove('open');d
 lightbox?.querySelector('.lightbox-close')?.addEventListener('click',closeLightbox);
 lightbox?.addEventListener('click',event=>{if(event.target===lightbox)closeLightbox();});
 document.addEventListener('keydown',event=>{if(event.key==='Escape')closeLightbox();});
+
+// Contact form — submits via Web3Forms, no page reload, no backend needed.
+const contactForm=document.getElementById('contact-form');
+const formStatus=document.getElementById('form-status');
+contactForm?.addEventListener('submit',async(event)=>{
+  event.preventDefault();
+  const submitBtn=contactForm.querySelector('button[type="submit"]');
+  const originalLabel=submitBtn.textContent;
+
+  if(contactForm.botcheck.value!==''){return;} // honeypot tripped, silently drop
+
+  submitBtn.disabled=true;
+  submitBtn.textContent='Sending…';
+  formStatus.textContent='';
+  formStatus.className='form-status';
+
+  try{
+    const response=await fetch(contactForm.action,{
+      method:'POST',
+      headers:{'Content-Type':'application/json',Accept:'application/json'},
+      body:JSON.stringify(Object.fromEntries(new FormData(contactForm)))
+    });
+    const result=await response.json();
+    if(response.ok&&result.success){
+      formStatus.textContent="Thanks — that's in. You'll hear back within a day.";
+      formStatus.classList.add('success');
+      contactForm.reset();
+    }else{
+      throw new Error(result.message||'Submission failed');
+    }
+  }catch(err){
+    formStatus.textContent='Something went wrong. Please email Zacharyantaya@gmail.com directly.';
+    formStatus.classList.add('error');
+  }finally{
+    submitBtn.disabled=false;
+    submitBtn.textContent=originalLabel;
+  }
+});
