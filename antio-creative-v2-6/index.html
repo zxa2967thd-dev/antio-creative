@@ -45,7 +45,7 @@
 <a href="#about">About</a>
 <a href="#contact">Contact</a>
 </nav>
-<a class="header-cta" href="mailto:Zacharyantaya@gmail.com?subject=Antio%20Creative%20Project%20Inquiry">Start a project</a>
+<a class="header-cta" href="#contact">Start a project</a>
 </header>
 <main id="main">
 <section aria-labelledby="hero-title" class="hero">
@@ -163,11 +163,51 @@
 <div class="contact-panel reveal">
 <p class="eyebrow">Let’s work together</p>
 <h2>Let’s build something people remember.</h2>
-<p>Share what you are building, what you need, and what success should look like. You will hear back directly from Zachary.</p>
+<p>Share what you are building, what you need, and what success should look like. You will hear back directly from Zachary, usually within a day.</p>
+<form action="https://api.web3forms.com/submit" class="contact-form" id="contact-form" method="POST">
+<input name="access_key" type="hidden" value="ccef0b5f-86c6-4bd6-aae5-f85ea4fa3c06"/>
+<input name="subject" type="hidden" value="New project inquiry — Antio Creative"/>
+<input aria-label="Leave this field empty" class="hp-field" name="botcheck" tabindex="-1" type="text"/>
+<div class="form-row">
+<label class="sr-only" for="cf-name">Name</label>
+<input id="cf-name" name="name" placeholder="Your name" required type="text"/>
+<label class="sr-only" for="cf-email">Email</label>
+<input id="cf-email" name="email" placeholder="Email address" required type="email"/>
+</div>
+<div class="form-row">
+<label class="sr-only" for="cf-business">Business name</label>
+<input id="cf-business" name="business_name" placeholder="Business name" type="text"/>
+<label class="sr-only" for="cf-type">Project type</label>
+<select id="cf-type" name="project_type" required>
+<option value="" disabled selected>Project type</option>
+<option>Photography</option>
+<option>Video Production</option>
+<option>Social Media Management</option>
+<option>Website Design</option>
+<option>Multiple / not sure yet</option>
+</select>
+</div>
+<div class="form-row">
+<label class="sr-only" for="cf-timeline">Timeline</label>
+<input id="cf-timeline" name="timeline" placeholder="Timeline (e.g. within a month)" type="text"/>
+<label class="sr-only" for="cf-budget">Budget range</label>
+<select id="cf-budget" name="budget_range">
+<option value="" disabled selected>Budget range</option>
+<option>Under $500</option>
+<option>$500 – $1,500</option>
+<option>$1,500 – $5,000</option>
+<option>$5,000+</option>
+<option>Not sure yet</option>
+</select>
+</div>
+<label class="sr-only" for="cf-details">What do you need?</label>
+<textarea id="cf-details" name="message" placeholder="What do you need?" required rows="4"></textarea>
 <div class="actions">
-<a class="btn btn-primary" href="mailto:Zacharyantaya@gmail.com?subject=Antio%20Creative%20Project%20Inquiry&amp;body=Business%20name%3A%0AProject%20type%3A%0ATimeline%3A%0ABudget%20range%3A%0AWhat%20do%20you%20need%3F%0A">Start your project</a>
+<button class="btn btn-primary" type="submit">Send inquiry</button>
 <a class="btn btn-secondary dark-btn" href="https://www.instagram.com/zackantaya/" rel="noopener" target="_blank">View Instagram ↗</a>
 </div>
+<p aria-live="polite" class="form-status" id="form-status"></p>
+</form>
 </div>
 <aside aria-label="Contact details" class="contact-card reveal delay-1">
 <p>Email</p><a href="mailto:Zacharyantaya@gmail.com">Zacharyantaya@gmail.com</a>
