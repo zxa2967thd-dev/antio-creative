@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /index-mobile-text-removed.html
+
+Sitemap: https://www.antiocreative.com/sitemap.xml
